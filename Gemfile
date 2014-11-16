@@ -3,6 +3,10 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.1.2'
 
+group :production do
+  gem 'pg', '~> 0.17.1'
+end
+
 group :development, :test do
   gem 'sqlite3'
 end
@@ -22,5 +26,3 @@ gem 'devise', '~> 3.4.1'
 gem 'nokogiri', '~> 1.6.4.1'
 
 gem 'bootstrap-sass', '~> 3.2.0.2'
-
-gem 'javan-whenever', '~> 0.3.7'
