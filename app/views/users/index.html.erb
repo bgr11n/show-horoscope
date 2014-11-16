@@ -6,7 +6,7 @@
   </tr>
   <% @users.each do |user| %>
     <tr>
-      <td><%= user.email if user.name.nil? || user.name.empty? %></td>
+      <td><%= user.name %></td>
       <td><%= link_to "Show", show_horoscope_path(user) %></td>
     </tr>
   <% end %>
