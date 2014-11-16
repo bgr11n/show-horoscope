@@ -11,7 +11,9 @@ class User < ActiveRecord::Base
     date = Date.new(result["year"].to_i, result["month"].to_i, result["day"].to_i)
 
     if date.is_a?(Date)
-      if ((Date.new(date.year, 3, 21)..Date.new(date.year, 4, 20)).to_a.include? date)
+      if ((Date.new(date.year, 1, 1)..Date.new(date.year, 1, 19)).to_a.include? date)
+        "Capricorn" 
+      elsif ((Date.new(date.year, 3, 21)..Date.new(date.year, 4, 20)).to_a.include? date)
         "Aries"
       elsif ((Date.new(date.year, 4, 21)..Date.new(date.year, 5, 20)).to_a.include? date)
         "Taurus"
@@ -29,14 +31,12 @@ class User < ActiveRecord::Base
         "Scorpio"
       elsif ((Date.new(date.year, 11, 22)..Date.new(date.year, 12, 21)).to_a.include? date)
         "Sagittarius"
-      elsif ((Date.new(date.year, 12, 22)..Date.new(date.year, 1, 19)).to_a.include? date)
+      elsif ((Date.new(date.year, 12, 22)..Date.new(date.year, 12, 31)).to_a.include? date)
         "Capricorn"
       elsif ((Date.new(date.year, 1, 20)..Date.new(date.year, 2, 18)).to_a.include? date)
         "Aquarius"
       elsif ((Date.new(date.year, 2, 19)..Date.new(date.year, 3, 20)).to_a.include? date)
         "Pisces"
-      else
-        "wtf"
       end
     else
       false
