@@ -1,0 +1,21 @@
+<blockquote class="blockquote-reverse">
+  <p><%= @horoscope %></p>
+  <footer>Youre horoscope for <%= @day.strftime("%B %d, %Y") %></footer>
+</blockquote>
+  <h4>Your sign is: <%= @sign %></h4>
+  
+  <hr>
+
+  <h2>Whant to see your horoscope for:</h2>
+
+  <% if params[:day] == "yesterday"%>
+    <%= link_to 'Today', show_horoscope_path, class: "btn btn-lg btn-default pull-left" %>
+  <% else %>
+    <%= link_to 'Yesterday', show_horoscope_path(:day => "yesterday"), class: "btn btn-lg btn-info pull-left" %>
+  <% end %>
+
+  <% if params[:day] == "tomorrow"%>
+    <%= link_to 'Today', show_horoscope_path, class: "btn btn-lg btn-default pull-right" %>
+  <% else %>
+    <%= link_to 'Tomorrow', show_horoscope_path(:day => "tomorrow"), class: "btn btn-lg btn-info pull-right" %>
+  <% end %>

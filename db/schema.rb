@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141114162850) do
+ActiveRecord::Schema.define(version: 20141115090850) do
+
+  create_table "user_horoscopes", force: true do |t|
+    t.date "date"
+    t.text "Aries"
+    t.text "Taurus"
+    t.text "Gemini"
+    t.text "Cancer"
+    t.text "Leo"
+    t.text "Virgo"
+    t.text "Libra"
+    t.text "Scorpio"
+    t.text "Sagittarius"
+    t.text "Capricorn"
+    t.text "Aquarius"
+    t.text "Pisces"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
